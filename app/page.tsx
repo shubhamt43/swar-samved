@@ -28,7 +28,7 @@ export default function Home() {
       formData.append('test_file', recordedAudio);
       formData.append('reference_file', referenceAudio);
 
-      const response = await fetch('http://localhost:8000/compare', {
+      const response = await fetch('https://swar-samved-backend.onrender.com/compare', {
         method: 'POST',
         body: formData,
       });
@@ -44,7 +44,7 @@ export default function Home() {
       }
     } catch (error) {
       console.error('Error:', error);
-      alert('Failed to connect to backend. Make sure it is running on http://localhost:8000');
+      alert('Failed to connect to backend. Make sure it is running on https://swar-samved-backend.onrender.com');
     } finally {
       setLoading(false);
     }
